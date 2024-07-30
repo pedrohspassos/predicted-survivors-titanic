@@ -95,6 +95,8 @@ O código e as análises detalhadas podem ser encontrados no arquivo Jupyter Not
     - Pandas
     - YData Profiling
     - Scikit Learn 
+    - Seaborn
+    - Matplotlib
     
 
 
