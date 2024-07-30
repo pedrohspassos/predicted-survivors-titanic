@@ -60,7 +60,7 @@ Essa é a Parte 1 de um conjunto de análises feitas sobre este dataset. Em cada
 
 - A análise foi realizada em um arquivo **Jupyter Notebook**, então algumas explicações se encontram ao decorrer do arquivo.
 
-- No diretorio também se encontra:
+- No diretorio também se encontra uma pasta **'dados'** com:
     - O conjunto de teste (*test.csv*) e o conjunto de treino (*train.csv*).
     - O arquivo da biblioteca (*ydata-profiling*) que auxilia na análise exploratória (*titanic_treino.html*).
     - E o arquivo com os dados que foram submetidos para análise no Kaggle (*base_envio.csv*).
@@ -108,10 +108,10 @@ O código e as análises detalhadas podem ser encontrados no arquivo Jupyter Not
 ## Referências
 
 
-- [Ferramenta de análise exploratória](https://github.com/ydataai/ydata-profiling)
-- [Árvore de Decisão | scikit-learn](https://scikit-learn.org/stable/modules/tree.html#classification)
-- [Classificação dos vizinhos mais próximos (KNN) | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
-- [Regressão Logística | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)
+ - [Ferramenta de análise exploratória](https://github.com/ydataai/ydata-profiling)
+ - [Árvore de Decisão | scikit-learn](https://scikit-learn.org/stable/modules/tree.html#classification)
+ - [Classificação dos vizinhos mais próximos (KNN) | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
+ - [Regressão Logística | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)
 - [Acurácia | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 - [Matriz de Confusão | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
 
