@@ -82,10 +82,13 @@ Desenvolver um modelo que conseguisse acertar quais passageiros sobreviveram ou 
 
 ## Conclusão
 
+Durante o desenvolvimento desse projeto, foi possível tirar algumas conclusões importantes acerca de uma análise de dados:
+- Houve uma melhoria gradual do modelo, uma vez que ao longo das etapas, melhorias no pré-processamento e na seleção de variáveis resultaram em aumentos significativos na acurácia. Além é claro da utilização de algoritmos mais complexos ao decorrer das etapas
+- Tornou-se claro a importância do pré-processamento, justamente em momentos como no tratamento das variáveis de texto e na normalização de colunas numéricas, 'Age' e 'Fare', o que resultou em um impacto positivo na performance dos modelos
+- A criação de novas features, como o total de familiares a bordo e se o passageiro estava sozinho ou não, contribuiu para a melhoria dos resultados, indicando a importância de entender e manipular adequadamente os dados.
+- E por fim, foi possível observar o quanto a aplicação do GridSearchCV para otimizar os parâmetros dos modelos provou ser uma estratégia eficaz, levando o modelo Random Forest a alcançar a melhor acurácia final. Destacando a importância do ajuste de hiperparâmetros para obter o máximo desempenho de modelos de aprendizado de máquina.
 
-
-
-
+Este projeto não só aprimorou minhas habilidades técnicas em aprendizado de máquina e análise de dados, mas também me mostrou a importância de uma abordagem estruturada e iterativa para a solução de problemas complexos. A combinação de técnicas de pré-processamento, experimentação com diferentes algoritmos e otimização de modelos foi crucial para alcançar resultados satisfatórios. 
 
 
 ## 🛠 Ferramentas
@@ -113,6 +116,10 @@ Desenvolver um modelo que conseguisse acertar quais passageiros sobreviveram ou 
  - [Árvore de Decisão | scikit-learn](https://scikit-learn.org/stable/modules/tree.html#classification)
  - [Classificação dos vizinhos mais próximos (KNN) | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
  - [Regressão Logística | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)
+ - [Random Forest| scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)
+ - [MLPClassifier| scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier)
 - [Acurácia | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)
 - [Matriz de Confusão | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
+- [OneHotEncoder | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
+- [GridSearchCV | scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
 
