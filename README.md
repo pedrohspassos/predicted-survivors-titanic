@@ -1,9 +1,10 @@
 
 # Titanic - Machine Learning from Disaster 
 
-- Abaixo se encontra um preview do histórico obtido durante o desenvolvimento do projeto:
+- Abaixo se encontra um preview do histórico das acurácias obtidas durante o desenvolvimento do projeto:
 
-![img_resultado](https://github.com/user-attachments/assets/f3377bd0-77ce-4aea-8825-06649091a1b2)
+![etapas](https://github.com/user-attachments/assets/b1e644b2-fd84-44c9-a5a1-bd4af8366c36)
+
 
 
 ## Introdução
