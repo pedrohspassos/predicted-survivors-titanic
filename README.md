@@ -1,5 +1,9 @@
 
-# Titanic - Machine Learning from Disaster (Parte 1)
+# Titanic - Machine Learning from Disaster 
+
+- Abaixo se encontra um preview do histórico obtido durante o desenvolvimento do projeto:
+
+![img_resultado](https://github.com/user-attachments/assets/f3377bd0-77ce-4aea-8825-06649091a1b2)
 
 
 ## Introdução
@@ -13,10 +17,6 @@ Embora houvesse algum elemento de sorte envolvido na sobrevivência, parece que 
 ## Decrição do Projeto
 
 Esse projeto trata-se de uma competição que ocorre em um dos sites mais famosos dentro da comunidade de dados, o **Kaggle**.
-
-Neste projeto, será construido um modelo preditivo que responda à pergunta: 
-- “Que tipos de pessoas têm maior probabilidade de sobreviver ao naufrágio do Titanic?” 
-    - usando dados de passageiros (ou seja, nome, idade, sexo, classe socioeconômica, etc), tentaremos prever.
 
 Os dados foram divididos em dois grupos:
 
@@ -38,52 +38,51 @@ O **conjunto de testes** será usado para ver o desempenho do modelo em dados n�
 
 ## Objetivo
 
-Essa é a Parte 1 de um conjunto de análises feitas sobre este dataset. Em cada uma das partes, serão abordados métodos, análises ou tratativas de dados distintas, com o objetivo de aumentar a acurácia do resultado final.
+Desenvolver um modelo que conseguisse acertar quais passageiros sobreviveram ou não ao naúfragio do Titanic. Para isso, aquele que obtivesse a maior **acurácia** seria o escolhido.
 
-## Metodologia
+## Etapas
 
-- Dado a quantidade de informações que o dataset gera, iremos fazer uma análise exploratoria nos dados, observando se ocorre uma melhora nos resultados a partir do momento que entramos em contato com mais métricas
-- Nessa parte 1 foi feito:
+- ## [Etapa 1 - Primeiro modelo](https://github.com/pedrohspassos/predicted-survivors-titanic/blob/main/analise_titanic_parte1.ipynb)
+    - Nesse etapa foi feito apenas o básico para conseguir verificar qual seria o resultado sem fazer nenhum tratamento nem engenharia dos dados
+      - Foi visualizado um resumo da base utilizando o [ydata-profiling](https://github.com/ydataai/ydata-profiling), biblioteca capaz de gerar com poucas linhas toda a descrição do nosso dataset
+      - Também foi elimido as colunas com elevada cardinalidade, foi tratado os valores vazios utilizando a média e a moda das variáveis e foi eliminado todas as colunas de texto
+      - Foram criados modelos utilizando 3 algoritmos: Árvore de Classificação, KNN e Regressão Logística, nos quais foram avaliados utilizando a acurácia e a matriz de confusão
+  - **O score público retornado pelo Kaggle foi: 0,66746**
+    
+- ## [Etapa 2 - Tratando as variáveis de texto](https://github.com/pedrohspassos/predicted-survivors-titanic/blob/main/analise_titanic_parte2.ipynb)
+    - Na segunda etapa o foco principal foi tratar as variáveis de texto para que fosse possível utilizar todas as variáveis no modelo
+        - Para fazer esse tratamento, utilizamos **lambda function** e **OneHotEncoder**
+    - Foram utilizados os mesmos modelos apresentados anteriormente
+    - **O score público retornado pelo Kaggle foi: 0,76555**
 
-    - **Importação da base**
-    - **Uso ydata-profiling (ideia geral dos dados)**
-    - **Limpeza de dados**
-    - **Seleção e treinamento ds modelos para classificação**
-        - Árvore de classificação
-        - Classificação dos vizinhos mais próximos (KNN)
-        - Regressão Logística
-    - **Avaliação dos modelos**
-        - Acurácia
-        - Matriz de Confusão
-    - **Realizando a previsão dos dados de Teste**
-        - Submissão do projeto para a plataforma Kaggle, que é a responsavel por verificar a acurácia final com os dados de teste.
+- ## [Etapa 3 - Aprofundando no negócio e melhorando os tratamentos dos dados](https://github.com/pedrohspassos/predicted-survivors-titanic/blob/main/analise_titanic_parte3.ipynb)
+    - Nessa terceira etapa o grande objetivo era entender melhor os dados para fazer um melhor tratamento e tentar melhorar o resultado obtido anteriormente
+    - Logo, foi feito:
+        - O **ajuste na escala dos dados para as colunas Age e Fare**
+        - O entendimento melhor sobre as colunas **SibSp** (nº de irmãos/cônjuges a bordo do Titanic) e **Parch** (nº de pais/filhos a bordo do Titanic) e a criação de **duas novas colunas: total de familiares a bordo do navio e se o passageiro estava sozinho ou não**
+        - Por fim, foi analisado a **correlação de todas as variáveis para selecionar aquelas que mais faziam sentido para o modelo**
+    - Foram utilizados os mesmos modelos apresentados anteriormente
+    - **O score público retornado pelo Kaggle foi: 0,77033**
+      
+- ## [Etapa 4 - Selecionando outros algoritmos para fazer a previsão](https://github.com/pedrohspassos/predicted-survivors-titanic/blob/main/analise_titanic_parte4.ipynb)
+    - Nessa etapa, foram mantidas todas as colunas (incluindo SibSp e Parch) e foram usados novos algoritmos para verificar o resultado do modelo
+    - Os algoritmos utilizados nessa etapa são **RandomForest , MLPCLassifier (Redes Neurais) e Regressão Logística** (mantida devido seus bons resultados ao decorrer das etapas)
+    - O MLPClassifier (um algoritmo de Redes Neurais) obteve a maior acurácia nos dados de validação entre todos os modelos vistos até anteriormente, porém ao usar esse modelo nos dados de teste (submetidos no Kaggle) o resultado foi pior que na etapa 3, mostrando que provavelmente tivemos um **overfitting do nosso modelo**
+    - **O score público retornado pelo Kaggle foi: 0,69856**
+      
+- ## [Etapa 5 - Utilizando o GridSearchCV e determinando os melhores parâmetros](https://github.com/pedrohspassos/predicted-survivors-titanic/blob/main/analise_titanic_parte5.ipynb)
+    - Foi utilizado o **GridSearchCV** para determinar os melhores parâmetros para os 3 modelos que foram utilizados na etapa anterior
+    - Nesse caso, o modelo escolhido foi aquele que utilizava o **RandomForest** e o resultado melhorou consideravalmente em relação a etapa 4 e foi melhor que na etapa 3
+    -  - **O score público retornado pelo Kaggle foi: 0,78229**
 
-- A análise foi realizada em um arquivo **Jupyter Notebook**, então algumas explicações se encontram ao decorrer do arquivo.
 
-- No diretorio também se encontra uma pasta **'dados'** com:
-    - O conjunto de teste (*test.csv*) e o conjunto de treino (*train.csv*).
-    - O arquivo da biblioteca (*ydata-profiling*) que auxilia na análise exploratória (*titanic_treino.html*).
-    - E o arquivo com os dados que foram submetidos para análise no Kaggle (*base_envio.csv*).
 
 
 
 
 ## Conclusão
 
-Neste projeto, que representa a Parte 1 de uma série de análises do dataset Titanic, realizamos diversas etapas para construir e avaliar modelos preditivos com o objetivo de determinar os fatores que influenciam a sobrevivência dos passageiros do Titanic. Através da importação e limpeza dos dados, do uso de ferramentas de análise exploratória como o ydata-profiling, e da implementação de vários modelos de classificação (Árvore de Decisão, K-Nearest Neighbors, Regressão Logística), conseguimos obter uma visão inicial das características mais relevantes e da performance dos modelos.
 
-Os principais pontos abordados incluem:
-
-- **Importação e limpeza de dados:** Garantimos que os dados estavam prontos para análise, removendo inconsistências e preenchendo valores ausentes.
-
-- **Análise exploratória:** Utilizamos o ydata-profiling para obter uma visão geral dos dados e identificar padrões iniciais.
-- **Seleção e treinamento de modelos:** Implementamos e treinamos modelos de classificação, ajustando parâmetros e avaliando suas performances.
-- **Avaliação dos modelos:** Medimos a acurácia e analisamos as matrizes de confusão para entender melhor a eficácia dos modelos.
-- **Previsão e submissão:** Aplicamos o modelo aos dados de teste e submetemos as previsões ao Kaggle para avaliação final.
-
-Com esta abordagem inicial, conseguimos estabelecer uma linha de base para a acurácia dos nossos modelos. Em partes subsequentes deste projeto, continuaremos a explorar diferentes técnicas e tratamentos de dados para melhorar a performance preditiva.
-
-O código e as análises detalhadas podem ser encontrados no arquivo Jupyter Notebook incluído neste repositório. À medida que avançamos para as próximas partes da série, esperamos refinar ainda mais nossos métodos e obter insights mais profundos sobre os fatores que influenciam a sobrevivência no desastre do Titanic.
 
 
 
