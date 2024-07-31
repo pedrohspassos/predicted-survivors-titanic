@@ -38,7 +38,7 @@ O **conjunto de testes** será usado para ver o desempenho do modelo em dados n�
 
 ## Objetivo
 
-Desenvolver um modelo que conseguisse acertar quais passageiros sobreviveram ou não ao naúfragio do Titanic. Para isso, aquele que obtivesse a maior **acurácia** seria o escolhido.
+Desenvolver um modelo que conseguisse acertar quais passageiros sobreviveram ou não ao naufrágio do Titanic. Para isso, aquele que obtivesse a maior **acurácia** seria o escolhido.
 
 ## Etapas
 
